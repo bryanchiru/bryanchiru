@@ -24,33 +24,29 @@ El riesgo base calculado en la fase de Suscripción se ajusta en función de las
 
 ### 2.1 Mecanismos de Co-pago
 
-* **Deducible:** Monto que el asegurado paga antes de que el seguro comience a cubrir.
-    * **Principio:** Un deducible alto se correlaciona con una **prima mensual más baja**.
-* **Copago/Coaseguro:** Pago fijo o porcentual por cada servicio utilizado.
-    * **Principio:** Implementar copagos reduce la **frecuencia esperada** de uso de servicios no esenciales (riesgo moral), disminuyendo la prima.
+Deducible:Monto que el asegurado paga antes de que el seguro comience a cubrir.
+Principio:Un deducible alto se correlaciona con una prima mensual más baja.
+Copago/Coaseguro:Pago fijo o porcentual por cada servicio utilizado.
+Principio:Implementar copagos reduce la **frecuencia esperada** de uso de servicios no esenciales (riesgo moral), disminuyendo la prima.
 
-### 2.2 Alcance de la Cobertura
+ 2.2 Alcance de la Cobertura
 
-* **Cobertura Plena vs. Básica:** La inclusión de servicios de alta complejidad (hospitalización ilimitada, cirugía, tratamiento oncológico) eleva la base de la **Prima Pura** debido al alto costo unitario de estos eventos.
-* **Red Médica:** El acceso a redes exclusivas o con mayor reputación (y, por ende, mayores costos) resulta en una prima más elevada.
+Cobertura Plena vs. Básica:La inclusión de servicios de alta complejidad (hospitalización ilimitada, cirugía, tratamiento oncológico) eleva la base de la Prima Pura debido al alto costo unitario de estos eventos.
+Red Médica:El acceso a redes exclusivas o con mayor reputación (y, por ende, mayores costos) resulta en una prima más elevada.
 
----
-
-## 3. Modelo Actuarial de Cálculo de la Prima Final
+3. Modelo Actuarial de Cálculo de la Prima Final
 
 El costo final que el cliente paga (Prima Total) es la suma de tres componentes principales:
 
-### 3.1 1. Prima Pura de Riesgo ($P_P$)
+3.1 1. Prima Pura de Riesgo ($P_P$)
 
 Esta es la estimación matemática del costo de los siniestros esperados, más un margen para la variabilidad:
 
-$$
 P_P = (\text{Frecuencia Esperada} \times \text{Costo Promedio Unitario}) + \text{Margen de Seguridad}
-$$
 
-* **Propósito:** Garantizar que la aseguradora pueda pagar la totalidad de las reclamaciones esperadas para el grupo de riesgo.
+Propósito:Garantizar que la aseguradora pueda pagar la totalidad de las reclamaciones esperadas para el grupo de riesgo.
 
-### 3.2 2. Recargos de Gestión ($R_G$)
+3.2 2. Recargos de Gestión ($R_G$)
 
 Incluye los gastos operativos necesarios para mantener el negocio:
 
@@ -58,12 +54,9 @@ Incluye los gastos operativos necesarios para mantener el negocio:
 * Costos de Adquisición (Comisiones a agentes o corredores).
 * Costos de Marketing y Tecnología.
 
-### 3.3 3. Prima Final ($P_F$)
+3.3 3. Prima Final ($P_F$)
 
 La Prima Total es el resultado de sumar el costo técnico más los gastos operativos y la carga fiscal:
-
-$$
 P_F = P_P + R_G + \text{Margen de Beneficio} + \text{Impuestos}
-$$
 
-**Conclusión:** La variación en el costo del seguro de salud se explica por la complejidad de la **frecuencia** y la **severidad** de los siniestros predichos, cuantificados mediante análisis de datos de los factores demográficos y médicos del solicitante.
+Conclusión:La variación en el costo del seguro de salud se explica por la complejidad de la frecuencia y la severidad de los siniestros predichos, cuantificados mediante análisis de datos de los factores demográficos y médicos del solicitante.
