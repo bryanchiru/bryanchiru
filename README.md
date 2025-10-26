@@ -5,13 +5,13 @@
 ¡Absolutamente! Aquí tienes el código completo de la página web, unificado en un solo bloque de texto.
 
 Este formato está diseñado para que lo copies y pegues en dos archivos separados en tu repositorio de GitHub:
+Entendido. El código anterior no funcionó exactamente como esperabas. Vamos a crear un nuevo formato más vistoso, fácil de leer y estructurado para GitHub Pages, con todos los apartados específicos que solicitaste para Bryan Chiru V.
 
-index.html (para la estructura)
+Este diseño utilizará una estructura moderna de una sola página con enlaces a secciones (los "sublinks") y se dividirá, nuevamente, en dos archivos esenciales: index.html y style.css.
 
-style.css (para los estilos)
+1. Archivo: index.html (Estructura)
+Copia este código y guárdalo como index.html.
 
-📄 Código Completo Unificado
-1. Contenido del archivo index.html
 HTML
 
 <!DOCTYPE html>
@@ -19,88 +19,61 @@ HTML
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Josué M. - Estudiante de IA</title>
-
+    <title>Bryan Chiru V. - Ingeniero Biomédico y AI</title>
+    
     <link rel="stylesheet" href="style.css">
-
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-    <header class="top-bar">
-        <div class="container">
-            <div class="logo">IA-ULAT</div>
-        </div>
-    </header>
-
-    <section id="inicio" class="hero-claude">
+    <section id="inicio" class="hero-section">
         <div class="content-wrapper">
-            <p class="subtitle">Estudiante de Inteligencia Artificial</p>
-            <h1>Hola, soy <span>Josué M.</span></h1>
-            <p class="tagline">Combino tecnología, datos e innovación.</p>
-
-            <p class="description">
-                Soy estudiante de Inteligencia Artificial en la Universidad Latina de Panamá, con una fuerte pasión por el aprendizaje automático, el análisis de datos y el desarrollo de soluciones inteligentes. Me interesa especialmente la aplicación de IA en problemas reales, desde clasificación y regresión hasta proyectos más complejos que integren múltiples técnicas de machine learning.
+            <p class="greeting">Hola, soy</p>
+            <h1>Bryan Chiru</h1>
+            <h2 class="subtitle">Ingeniería Biomédica | Inteligencia Artificial</h2>
+            <p class="summary">
+                Apasionado por la **Ingeniería Biomédica**, enfocado en la aplicación de la **Inteligencia Artificial** para crear soluciones innovadoras en el diagnóstico y tratamiento médico. Combino el análisis de datos con el conocimiento biológico para impulsar la tecnología de la salud.
             </p>
-
-            <a href="#proyectos" class="btn-proyectos">
-                Ver Proyectos →
-            </a>
-
-            <div class="scroll-indicator"></div>
+            <a href="#proyectos" class="btn-action">Ver Proyectos Destacados <i class="fas fa-arrow-down"></i></a>
         </div>
     </section>
 
     <section id="proyectos" class="projects-section">
         <div class="content-wrapper">
-            <h2>Proyectos y Trabajos</h2>
-            <p class="section-subtitle">
-                Repositorio de tareas y laboratorios del curso de IA
+            <h2 class="section-title">Proyectos y Trabajos de IA</h2>
+            <p class="section-description">
+                Explora los temas clave y las implementaciones desarrolladas en el curso de Inteligencia Artificial.
             </p>
-
+            
             <div class="project-grid">
 
                 <div class="project-card">
-                    <div class="card-icon book-icon"></div>
-                    <h3>Repositorio & Overview</h3>
-                    <p class="card-description">
-                        Configuración inicial del repositorio GitHub y documentación general del proyecto de Inteligencia Artificial.
-                    </p>
-                    <a href="#" class="btn-card-link">
-                        Ver proyecto →
+                    <i class="fas fa-folder-open card-icon"></i>
+                    <h3>Repositorio y Overview</h3>
+                    <p>Documentación general del proyecto de IA y estructura inicial del código en GitHub.</p>
+                    <a href="repositorio.html" class="btn-detail">
+                        Ir al Tema →
                     </a>
                 </div>
 
                 <div class="project-card">
-                    <div class="card-icon brain-icon"></div>
+                    <i class="fas fa-brain card-icon"></i>
                     <h3>Clasificación Binaria</h3>
-                    <p class="card-description">
-                        Implementación de algoritmos de clasificación binaria utilizando machine learning y análisis de datos.
-                    </p>
-                    <a href="#" class="btn-card-link">
-                        Ver proyecto →
+                    <p>Implementación de modelos de Machine Learning para problemas de clasificación binaria.</p>
+                    <a href="clasificacion.html" class="btn-detail">
+                        Ir al Tema →
                     </a>
                 </div>
 
                 <div class="project-card">
-                    <div class="card-icon chart-icon"></div>
-                    <h3>Regresión</h3>
-                    <p class="card-description">
-                        Modelos de regresión para predicción de valores continuos y análisis estadístico de datos.
-                    </p>
-                    <a href="#" class="btn-card-link">
-                        Ver proyecto →
-                    </a>
-                </div>
-
-                <div class="project-card">
-                    <div class="card-icon test-tube-icon"></div>
-                    <h3>WebPage Lab</h3>
-                    <p class="card-description">
-                        Desarrollo de página web para presentación del portafolio de proyectos de IA.
-                    </p>
-                    <a href="#" class="btn-card-link">
-                        Ver proyecto →
+                    <i class="fas fa-chart-bar card-icon"></i>
+                    <h3>Análisis de Datos</h3>
+                    <p>Procesamiento, limpieza y visualización de grandes conjuntos de datos para la toma de decisiones.</p>
+                    <a href="analisis.html" class="btn-detail">
+                        Ir al Tema →
                     </a>
                 </div>
 
@@ -108,40 +81,41 @@ HTML
         </div>
     </section>
 
-    <footer id="contacto">
+    <section id="resena" class="info-section">
         <div class="content-wrapper">
-            <h2>Josué M.</h2>
-            <p>Estudiante de Inteligencia Artificial</p>
-            <p>Universidad Latina de Panamá</p>
-
-            <div class="footer-icons">
-                <a href="#proyectos" class="footer-link folder-icon" aria-label="Ir a Proyectos"></a>
-
-                <a href="mailto:tu.correo@ejemplo.com" class="footer-link email-icon" aria-label="Enviar Correo"></a>
-
-                <a href="#inicio" class="footer-link up-arrow-icon" aria-label="Volver Arriba"></a>
+            <h2 class="section-title">Información Personal (Reseña)</h2>
+            <div class="info-details">
+                <p><span>Nombre Completo:</span> Bryan Chiru V</p>
+                <p><span>Cédula:</span> 8-957-855</p>
+                <p><span>Materia:</span> Inteligencia Artificial</p>
+                <p><span>Carrera:</span> Ingeniería Biomédica</p>
             </div>
-
-            <p class="copyright">&copy; 2025 Josué M. – Todos los derechos reservados</p>
+            <p class="contact-prompt">Conéctate conmigo en <a href="https://github.com/tu-usuario-github" target="_blank">GitHub</a>.</p>
         </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Bryan Chiru V. | Todos los derechos reservados.</p>
     </footer>
 
 </body>
 </html>
-2. Contenido del archivo style.css
+2. Archivo: style.css (Estilos Vistosos)
+Copia este código y guárdalo como style.css. Este código dará un diseño limpio, profesional y bien espaciado.
+
 CSS
 
-/* Variables de color (ajustadas para el diseño) */
+/* Variables de Estilo */
 :root {
-    --color-morado-oscuro: #2e084d;
-    --color-morado-claro: #5a3c96;
-    --color-blanco: #ffffff;
-    --color-texto: #333;
-    --color-acento: #4a90e2; /* Azul para resaltar Josué M. y enlaces */
-    --color-fondo-claro: #eee;
+    --color-primary: #007bff; /* Azul vibrante */
+    --color-secondary: #f4f4f4; /* Fondo suave */
+    --color-dark: #333;
+    --color-light: #fff;
+    --font-family-main: 'Poppins', sans-serif;
+    --padding-section: 80px 0;
 }
 
-/* -------------------- Estilos Generales y Reseteo -------------------- */
+/* Reset y Base */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -149,280 +123,203 @@ CSS
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    color: var(--color-blanco);
-    background-color: var(--color-morado-oscuro);
+    font-family: var(--font-family-main);
+    line-height: 1.6;
+    color: var(--color-dark);
+    background-color: var(--color-secondary);
 }
 
-.container {
-    max-width: 1100px;
-    margin: auto;
-    padding: 0 20px;
+a {
+    text-decoration: none;
+    color: var(--color-primary);
 }
 
 .content-wrapper {
-    max-width: 600px; /* Ancho máximo para el contenido principal (simula un móvil) */
+    max-width: 960px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* -------------------- 1. Cabecera (IA-ULAT) -------------------- */
-.top-bar {
-    background-color: #1f2a36; /* Color oscuro para la barra superior, diferente al fondo principal */
-    padding: 15px 0;
-    text-align: left;
-    position: relative;
-    z-index: 10;
-}
-
-.top-bar .logo {
-    font-weight: 700;
-    font-size: 1.2rem;
-    padding-left: 20px;
-}
-
-/* -------------------- 2. Sección Hero (Fondo Degradado) -------------------- */
-.hero-claude {
-    /* Fondo degradado similar al de la imagen */
-    background: linear-gradient(180deg, var(--color-morado-claro) 0%, var(--color-morado-oscuro) 100%);
-    padding: 40px 0 80px 0;
-    min-height: 85vh;
-    position: relative;
-    text-align: center;
-}
-
-.hero-claude .subtitle {
-    font-size: 1rem;
-    opacity: 0.8;
-    margin-bottom: 5px;
-}
-
-.hero-claude h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-}
-
-.hero-claude h1 span {
-    color: var(--color-acento); /* Color para resaltar el nombre */
-}
-
-.hero-claude .tagline {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    opacity: 0.9;
-}
-
-.hero-claude .description {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    text-align: justify;
-    margin-bottom: 40px;
-    padding: 0 10px;
-}
-
-/* Botón "Ver Proyectos" */
-.btn-proyectos {
-    display: inline-flex;
-    justify-content: center;
+/* -------------------- 1. Sección Hero (Inicio / Saludo) -------------------- */
+.hero-section {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #0056b3 100%); /* Degradado vistoso */
+    color: var(--color-light);
+    min-height: 100vh;
+    display: flex;
     align-items: center;
-    width: 250px;
-    padding: 15px 30px;
-    background-color: var(--color-blanco);
-    color: var(--color-morado-oscuro);
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 1.1rem;
-    border-radius: 50px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s;
+    text-align: center;
+    padding: var(--padding-section);
 }
 
-.btn-proyectos:hover {
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+.hero-section .content-wrapper {
+    max-width: 700px;
+}
+
+.greeting {
+    font-size: 1.2rem;
+    font-weight: 300;
+    opacity: 0.8;
+}
+
+.hero-section h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin: 5px 0 10px 0;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 25px;
+    color: #e0f0ff;
+}
+
+.summary {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+.btn-action {
+    display: inline-block;
+    background-color: var(--color-light);
+    color: var(--color-primary);
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: 700;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-action:hover {
+    background-color: var(--color-secondary);
     transform: translateY(-2px);
 }
 
-.scroll-indicator {
-    width: 20px;
-    height: 5px;
-    background-color: var(--color-blanco);
-    opacity: 0.5;
-    border-radius: 5px;
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-/* -------------------- 3. Sección de Proyectos -------------------- */
+/* -------------------- 2. Sección Proyectos -------------------- */
 .projects-section {
-    background-color: var(--color-morado-oscuro);
-    padding: 60px 0;
+    padding: var(--padding-section);
+    background-color: var(--color-light);
     text-align: center;
 }
 
-.projects-section h2 {
-    font-size: 2rem;
+.section-title {
+    font-size: 2.5rem;
     font-weight: 700;
-    color: var(--color-blanco);
-    margin-bottom: 5px;
+    color: var(--color-primary);
+    margin-bottom: 10px;
 }
 
-.projects-section .section-subtitle {
+.section-description {
     font-size: 1.1rem;
-    opacity: 0.7;
-    margin-bottom: 40px;
-    color: var(--color-blanco);
+    color: #666;
+    margin-bottom: 50px;
 }
 
 .project-grid {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
 }
 
-/* Estilo de la Tarjeta de Proyecto */
 .project-card {
-    background-color: var(--color-blanco);
-    color: var(--color-texto);
+    background-color: var(--color-secondary);
     padding: 30px;
-    width: 100%;
-    max-width: 500px;
-    border-radius: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
     text-align: left;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
 }
 
 .project-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* -------------------- Iconos de las Tarjetas (Placeholders) -------------------- */
 .card-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 5px;
+    font-size: 2rem;
+    color: var(--color-primary);
     margin-bottom: 15px;
-    /* Para simular la forma del icono, se usa background-color */
-}
-
-.book-icon {
-    background-color: #2196f3; /* Azul para libro */
-}
-
-.brain-icon {
-    background-color: #e91e63; /* Rosa para cerebro */
-}
-
-.chart-icon {
-    background: linear-gradient(90deg, #d32f2f 0%, #388e3c 45%, #1976d2 100%); /* Colores para gráfico */
-}
-
-.test-tube-icon {
-    background-color: #00bcd4; /* Cyan para tubo de ensayo */
 }
 
 .project-card h3 {
     font-size: 1.5rem;
     margin-bottom: 10px;
+    color: var(--color-dark);
 }
 
-.project-card .card-description {
-    font-size: 1rem;
-    line-height: 1.5;
-    color: #666;
-    margin-bottom: 20px;
-}
-
-/* Enlace "Ver proyecto →" */
-.btn-card-link {
-    color: var(--color-acento);
-    text-decoration: none;
-    font-weight: 700;
+.btn-detail {
+    display: inline-block;
+    color: var(--color-primary);
+    font-weight: 500;
+    margin-top: 15px;
     transition: color 0.3s;
 }
 
-.btn-card-link:hover {
-    color: var(--color-morado-claro);
+.btn-detail:hover {
+    color: #0056b3;
 }
 
-/* -------------------- 4. Pie de Página (Footer) -------------------- */
-footer {
-    background-color: #2b3e50;
-    color: var(--color-secundario);
-    padding: 40px 0 20px 0;
+/* -------------------- 3. Sección Reseña / Info -------------------- */
+.info-section {
+    padding: var(--padding-section);
+    background-color: #e9ecef; /* Color de fondo contrastante */
     text-align: center;
 }
 
-footer h2 {
-    font-size: 1.8rem;
+.info-details {
+    margin: 30px auto;
+    max-width: 450px;
+    padding: 20px;
+    background-color: var(--color-light);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.info-details p {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.info-details span {
     font-weight: 700;
-    margin-bottom: 5px;
-    color: var(--color-blanco);
+    color: var(--color-primary);
+    display: inline-block;
+    width: 150px; /* Alineación de claves */
 }
 
-footer p {
-    margin-bottom: 5px;
-    opacity: 0.9;
+.contact-prompt {
+    font-size: 1.1rem;
+    margin-top: 30px;
 }
 
-.footer-icons {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin: 20px 0;
-}
-/* Estilo para los Iconos del Footer */
-.footer-link {
-    display: block;
-    width: 35px;
-    height: 35px;
-    border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.1);
-    transition: background-color 0.3s;
+/* -------------------- 4. Pie de Página -------------------- */
+footer {
+    background-color: var(--color-dark);
+    color: var(--color-secondary);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
 }
 
-.footer-link:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-/* Colores y formas para simular los iconos */
-.folder-icon {
-    background-color: #fbc02d; /* Carpeta */
-}
-
-.email-icon {
-    background-color: #e57373; /* Correo */
-}
-
-.up-arrow-icon {
-    background-color: #64b5f6; /* Flecha */
-}
-
-.copyright {
-    font-size: 0.8rem;
-    margin-top: 15px;
-    opacity: 0.6;
-}
-
-/* -------------------- Adaptación a Móviles -------------------- */
-@media (max-width: 650px) {
-    .content-wrapper {
-        padding: 0 10px;
+/* Adaptación a Móviles */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 3rem;
     }
-    
-    .hero-claude h1 {
+    .subtitle {
+        font-size: 1.2rem;
+    }
+    .section-title {
         font-size: 2rem;
     }
-
-    .hero-claude .description {
-        font-size: 1rem;
+    .info-details span {
+        display: block;
+        width: 100%;
+        margin-bottom: 0;
     }
-    
-    .project-card {
-        padding: 20px;
+    .info-details p {
+        margin-bottom: 15px;
     }
 }
