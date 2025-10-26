@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IA - Inteligencia Artificial | Bryan Chirú V</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>IA - Inteligencia Artificial</h1>
+        <p>Desarrollado por <strong>Bryan Chirú V</strong></p>
+    </header>
+
+    <main>
+        <h2>Proyectos y Tareas</h2>
+        <div class="tareas">
+            <div class="card">
+                <h3>Repositorio & Overview 📘</h3>
+                <p>Configuración inicial del repositorio GitHub y documentación general del proyecto de Inteligencia Artificial.</p>
+                <a class="link" href="https://github.com/tuusuario/tarea1" target="_blank">Ver proyecto →</a>
+            </div>
+
+            <div class="card">
+                <h3>Clasificación Binaria 🧠</h3>
+                <p>Implementación de algoritmos de clasificación binaria utilizando machine learning y análisis de datos.</p>
+                <a class="link" href="https://github.com/tuusuario/tarea2" target="_blank">Ver proyecto →</a>
+            </div>
+
+            <div class="card">
+                <h3>Regresión 📊</h3>
+                <p>Desarrollo y comparación de modelos de regresión aplicados a conjuntos de datos reales.</p>
+                <a class="link" href="https://github.com/tuusuario/tarea3" target="_blank">Ver proyecto →</a>
+            </div>
+
+            <div class="card">
+                <h3>Cálculo de Seguro (Regresión) 🛡️</h3>
+                <p>Análisis de datos para desarrollar un modelo de regresión que calcule el costo o prima de un seguro médico.</p>
+                <a class="link" href="https://github.com/tuusuario/calculo-seguro-ia" target="_blank">Ver proyecto →</a>
+            </div>
+
+            <div class="card">
+                <h3>Hábitos de Sueño & Web 🌙</h3>
+                <p>Realización de un modelo de datos y desarrollo de una interfaz web para el análisis de hábitos de sueño.</p>
+                <a class="link" href="https://github.com/tuusuario/habitos-sueno" target="_blank">Ver proyecto →</a>
+            </div>
+
+            <div class="card">
+                <h3>Laboratorio 1 - WebPage 💻</h3>
+                <p>Diseño y desarrollo de una página web informativa para la visualización de proyectos del curso.</p>
+                <a class="link" href="https://github.com/tuusuario/webpage" target="_blank">Ver proyecto →</a>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        © 2025 Bryan Chirú V — ULAT Ingeniería Biomédica
+    </footer>
+</body>
+</html>
