@@ -1,115 +1,188 @@
+:root {
+    --color-primary: #5A20C2; /* Púrpura principal */
+    --color-secondary: #8B5CF6; /* Púrpura de acento */
+    --color-text-light: #F9FAFB; /* Texto blanco suave */
+    --color-bg-dark: #1F2937; /* Fondo oscuro */
+    --color-card-bg: #FFFFFF; /* Fondo de tarjeta blanca */
+    --font-family-main: 'Montserrat', sans-serif;
+}
+
+/* Base y Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    font-family: "Poppins", sans-serif;
-    margin: 0;
-    /* Degradado atractivo para IA */
-    background: linear-gradient(135deg, #4f46e5, #6b21a8);
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
+    font-family: var(--font-family-main);
+    line-height: 1.6;
+    color: var(--color-bg-dark);
+    background-color: var(--color-bg-dark);
 }
 
-header {
-    width: 100%;
-    text-align: center;
-    padding: 2rem 1rem;
-    color: white;
+.content-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2.2rem;
-    /* Color de acento para el título */
-    color: #00e0ff; 
+/* -------------------- 1. HERO SECTION (Saludo) -------------------- */
+.hero-section {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    color: var(--color-text-light);
+    padding: 100px 20px;
+    text-align: left;
 }
 
-header p {
-    margin: 5px 0 0;
-    font-size: 1.1rem;
-    color: #eaeaea;
-}
-
-header p strong {
-    font-weight: 700;
-    color: #fff;
-}
-
-main {
-    background: white;
-    border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    padding: 2rem;
-    margin-top: 2rem;
-    width: 90%;
-    max-width: 800px;
-    flex-grow: 1; 
-}
-
-h2 {
-    text-align: center;
-    color: #4f46e5;
-    margin-bottom: 1.5rem;
-}
-
-.tareas {
-    display: grid;
-    gap: 1.5rem;
-}
-
-.card {
-    background: #f9f9ff;
-    border-radius: 15px;
-    padding: 1.5rem;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    border-left: 5px solid #4f46e5; /* Barra de color como acento */
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-}
-
-.card h3 {
-    margin-top: 0.5rem;
-    color: #4f46e5;
-    font-weight: 700;
-}
-
-.card p {
-    font-size: 0.95rem;
-    color: #555;
-}
-
-.link {
-    display: inline-block;
-    margin-top: 10px;
-    color: #6b21a8; 
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.2s;
-}
-
-.link:hover {
-    text-decoration: underline;
-    color: #4f46e5;
-}
-
-footer {
-    color: white;
-    margin-top: 2rem;
+.ia-tag {
     font-size: 0.9rem;
-    opacity: 0.9;
-    text-align: center;
-    padding: 1rem 0;
+    font-weight: 600;
+    opacity: 0.8;
+    letter-spacing: 2px;
 }
 
-/* Responsive Design */
+.greeting {
+    font-size: 1.2rem;
+    margin-top: 5px;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 5px 0 20px 0;
+}
+
+.summary {
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 600px;
+    margin-bottom: 30px;
+}
+
+.btn-action {
+    display: inline-block;
+    background-color: var(--color-card-bg);
+    color: var(--color-primary);
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: 700;
+    transition: all 0.3s;
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-action:hover {
+    background-color: var(--color-text-light);
+    transform: translateY(-2px);
+}
+
+/* -------------------- 2. PROJECTS SECTION -------------------- */
+.projects-section {
+    padding: 80px 20px;
+    background-color: #F9FAFB; /* Fondo muy claro para contrastar */
+}
+
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--color-bg-dark);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.section-description {
+    font-size: 1rem;
+    color: #6B7280;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    display: block;
+    background-color: var(--color-card-bg);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-decoration: none;
+    color: var(--color-bg-dark);
+    border: 1px solid #E5E7EB;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.project-card h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.project-card p {
+    font-size: 0.95rem;
+    color: #4B5563;
+    margin-bottom: 15px;
+}
+
+.link-text {
+    color: var(--color-primary);
+    font-weight: 600;
+    display: inline-block;
+    transition: color 0.3s;
+}
+
+.link-text:hover {
+    color: var(--color-secondary);
+}
+
+
+/* -------------------- 3. INFO SECTION (Reseña) -------------------- */
+.info-section {
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-light);
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.section-title-footer {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.detail-line {
+    font-size: 1rem;
+    color: #D1D5DB;
+    margin-bottom: 5px;
+}
+
+.copyright {
+    margin-top: 20px;
+    font-size: 0.85rem;
+    color: #9CA3AF;
+}
+
+/* Responsive */
 @media (max-width: 600px) {
-    header h1 {
-        font-size: 1.8rem;
+    .hero-section h1 {
+        font-size: 2.5rem;
     }
-    main {
-        padding: 1.5rem;
+    .project-grid {
+        grid-template-columns: 1fr;
     }
 }
