@@ -1,230 +1,50 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>IA - Inteligencia Artificial | Bryan Chirú V</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/bryanchiru/style.css">
-
-  <style>
-    :root {
-      --primary: #6d28d9;
-      --accent: #a78bfa;
-      --bg: #f8f7ff;
-      --text: #333;
-      --card-bg: #ffffff;
-      --shadow: rgba(109, 40, 217, 0.15);
-    }
-
-    * {
-      box-sizing: border-box;
-      transition: all 0.3s ease;
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      overflow-x: hidden;
-    }
-
-    /* Encabezado con gradiente animado */
-    header {
-      text-align: center;
-      padding: 4rem 1rem;
-      background: linear-gradient(135deg, #6d28d9, #4c1d95, #3b82f6);
-      background-size: 300% 300%;
-      animation: gradientShift 10s ease infinite;
-      color: #fff;
-      border-bottom-left-radius: 2rem;
-      border-bottom-right-radius: 2rem;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    }
-
-    @keyframes gradientShift {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    header h1 {
-      font-size: 2rem;
-      margin: 0;
-      font-weight: 700;
-    }
-
-    header p {
-      font-size: 1.1rem;
-      margin-top: 0.5rem;
-      opacity: 0.9;
-    }
-
-    main {
-      padding: 3rem 1rem;
-      display: flex;
-      justify-content: center;
-    }
-
-    h2 {
-      text-align: center;
-      color: var(--primary);
-      font-size: 2rem;
-      margin-bottom: 2rem;
-    }
-
-    .tareas {
-      width: 100%;
-      max-width: 1100px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-    }
-
-    /* Tarjetas con efecto flotante */
-    .card {
-      position: relative;
-      background: var(--card-bg);
-      border-radius: 20px;
-      padding: 2rem;
-      box-shadow: 0 10px 25px var(--shadow);
-      overflow: hidden;
-      border: 1px solid rgba(109, 40, 217, 0.08);
-      transform: translateY(0);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-
-    .card::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(120deg, rgba(167,139,250,0.2), rgba(255,255,255,0.1), transparent);
-      transition: all 0.6s ease;
-    }
-
-    .card:hover::before {
-      left: 100%;
-    }
-
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 35px rgba(109, 40, 217, 0.25);
-    }
-
-    .card h3 {
-      color: var(--primary);
-      margin: 0 0 0.5rem;
-      font-size: 1.2rem;
-      font-weight: 700;
-    }
-
-    .card p {
-      color: #555;
-      margin-bottom: 1.3rem;
-      line-height: 1.6;
-    }
-
-    .link {
-      display: inline-block;
-      padding: 0.7rem 1.2rem;
-      border-radius: 50px;
-      background: linear-gradient(90deg, var(--primary), var(--accent));
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      box-shadow: 0 4px 15px rgba(109, 40, 217, 0.3);
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .link:hover {
-      transform: translateY(-3px) scale(1.05);
-      box-shadow: 0 8px 20px rgba(109, 40, 217, 0.4);
-    }
-
-    .link::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -75%;
-      width: 50%;
-      height: 100%;
-      background: rgba(255,255,255,0.25);
-      transform: skewX(-25deg);
-      transition: left 0.5s ease;
-    }
-
-    .link:hover::after {
-      left: 125%;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      background: linear-gradient(135deg, #4c1d95, #6d28d9);
-      color: #fff;
-      font-weight: 500;
-      margin-top: 3rem;
-      border-top-left-radius: 2rem;
-      border-top-right-radius: 2rem;
-      box-shadow: 0 -10px 30px rgba(0,0,0,0.15);
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.7rem;
-      }
-      .card {
-        padding: 1.5rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IA - Inteligencia Artificial | Bryan Chirú V</title>
+   
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+   
+    <link rel="stylesheet" href="/bryanchiru/style.css">
 </head>
-
 <body>
-  <header>
-    <h1>IA - Inteligencia Artificial</h1>
-    <p>Desarrollado por <strong>Bryan Chirú V</strong></p>
-  </header>
+    <header>
+        <h1>IA - Inteligencia Artificial</h1>
+        <p>Desarrollado por <strong>Bryan Chirú V</strong></p>
+    </header>
+    <main>
+        <h2>Proyectos y Tareas</h2>
+        <div class="tareas">
+            <div class="card">
+                <h3>Repositorio & Overview 📘</h3>
+                <p>Configuración inicial del repositorio GitHub y documentación general del proyecto de Inteligencia Artificial.</p>
+                <a class="link" href="https://github.com/bryanchiru/bryanchiru">Ver proyecto →</a>
+            </div>
+            <div class="card">
+                <h3>Hábitos de Sueño & Web 🌙</h3>
+                <p>Realización de un modelo de datos y desarrollo de una interfaz web para el análisis de hábitos de sueño.</p>
+                <!-- 🔗 Enlace actualizado -->
+                <a class="link" href="https://github.com/bryanchiru/bryanchiru/blob/main/Tarea3/analisis-de-sue%C3%B1o" target="_blank">Ver tarea de Análisis de Sueño →</a>
+            </div>
+            <div class="card">
+                <h3>Calculo de seguro Medico 📊</h3>
+                <p>Desarrollo y comparación de modelos de regresión aplicados a conjuntos de datos reales.</p>
+                <a class="link" href="https://github.com/bryanchiru/bryanchiru/blob/main/Analisis-datos-seguro-salud" target="_blank">Ver proyecto →</a>
+            </div>
 
-  <main>
-    <div class="tareas">
-     
-      <div class="card">
-        <h3>Repositorio & Overview 📘</h3>
-        <p>Configuración inicial del repositorio GitHub y documentación general del proyecto de Inteligencia Artificial.</p>
-        <a class="link" href="https://github.com/bryanchiru/bryanchiru">Ver Repositorio →</a>
-      </div>
+            <div class="card">
+                <h3>Laboratorio 1 - WebPage 💻</h3>
+                <p>Diseño y desarrollo de una página web informativa para la visualización de proyectos del curso.</p>
+                <a class="link" href="https://github.com/tuusuario/webpage" target="_blank">Ver proyecto →</a>
+            </div>
+           
+        </div>
+    </main>
 
-      <div class="card">
-        <h3>Hábitos de Sueño & Web 🌙</h3>
-        <p>Realización de un modelo de datos y desarrollo de una interfaz web para el análisis de hábitos de sueño.</p>
-        <a class="link" href="https://github.com/bryanchiru/bryanchiru/blob/main/Tarea3/analisis-de-sue%C3%B1o" target="_blank">Ver Análisis de Sueño →</a>
-      </div>
-      <div clase="tarjeta">
-        <h3>Regresión 📊</h3>
-        <p>Desarrollo y comparación de modelos de regresión aplicados a conjuntos de datos reales.</p>
-        <a class="enlace-enlace" href="https://github.com/bryanchiru/bryanchiru/blob/main/Calculo%20de%20seguro%20de%20salud" target="_blank">Ver Seguro Médico</a>
-      </div>
-     
-      <div class="card">
-        <h3>Laboratorio 1 - WebPage 💻</h3>
-        <p>Diseño y desarrollo de una página web informativa para la visualización de proyectos del curso.</p>
-        <a class="link" href="https://github.com/tuusuario/webpage" target="_blank">Ver proyecto →</a>
-      </div>
-
-    </div>
-  </main>
-
-  <footer>
-    © 2025 Bryan Chirú V — ULAT Ingeniería Biomédica
-    cedula: 8-957-855
-  </footer>
+    <footer>
+        © 2025 Bryan Chirú V — ULAT Ingeniería Biomédica
+    </footer>
 </body>
 </html>
