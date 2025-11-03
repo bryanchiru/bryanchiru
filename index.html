@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>IA - Inteligencia Artificial | Bryan Chirú V</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/bryanchiru/style.css">
 
   <style>
@@ -13,16 +13,17 @@
     :root {
       --primary: #00e0ff; /* Cian Brillante / Tech Blue */
       --accent: #007bff; /* Azul de Soporte */
-      --bg: #121212; /* Fondo Oscuro (Dark Mode) */
+      --bg: #0a0a0a; /* Fondo Muy Oscuro */
       --text: #f0f0f0; /* Texto Claro */
       --card-bg: #1e1e1e; /* Fondo de Tarjeta Oscuro */
-      --shadow-dark: rgba(0, 0, 0, 0.5); 
-      --neon-shadow: 0 0 10px rgba(0, 224, 255, 0.6), 0 0 20px rgba(0, 224, 255, 0.4);
+      --secondary-text: #ccc;
+      --shadow-dark: rgba(0, 0, 0, 0.7); 
+      --neon-glow: 0 0 8px rgba(0, 224, 255, 0.7);
     }
 
     * {
       box-sizing: border-box;
-      transition: all 0.3s ease;
+      transition: all 0.3s ease-in-out;
     }
 
     body {
@@ -36,120 +37,114 @@
     /* ENCABEZADO TECNOLÓGICO */
     header {
       text-align: center;
-      padding: 4rem 1rem;
+      padding: 5rem 1rem 3rem;
       background: #1a1a1a; 
       color: var(--text);
-      border-bottom: 2px solid var(--primary); /* Línea de acento */
-      box-shadow: 0 5px 20px var(--shadow-dark);
+      border-bottom: 3px solid var(--primary); 
+      box-shadow: 0 5px 25px var(--shadow-dark);
     }
 
     header h1 {
-      font-size: 2.2rem;
+      font-size: 2.5rem;
       margin: 0;
+      font-family: 'Roboto Mono', monospace;
       font-weight: 700;
-      color: var(--primary); /* Título en color neón */
-      text-shadow: 0 0 5px rgba(0, 224, 255, 0.7);
+      color: var(--primary); 
+      text-shadow: var(--neon-glow);
     }
 
     header p {
       font-size: 1.1rem;
-      margin-top: 0.5rem;
-      opacity: 0.8;
+      margin-top: 0.8rem;
+      opacity: 0.7;
     }
 
     main {
-      padding: 3rem 1rem;
+      padding: 4rem 1rem;
       display: flex;
       justify-content: center;
     }
 
-    h2 {
-      text-align: center;
-      color: var(--primary);
-      font-size: 2rem;
-      margin-bottom: 2rem;
-    }
-
     .tareas {
       width: 100%;
-      max-width: 1100px;
+      max-width: 1200px;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
+      gap: 2.5rem;
     }
 
-    /* TARJETAS (ESTILIZANDO .card Y .tarjeta JUNTOS) */
+    /* TARJETAS MODERNAS Y TECNOLÓGICAS */
     .card, .tarjeta {
       position: relative;
       background: var(--card-bg);
-      border-radius: 10px;
-      padding: 2rem;
+      border-radius: 8px;
+      padding: 2.2rem;
       box-shadow: 0 5px 15px var(--shadow-dark);
       border: 1px solid #333;
-      transform: translateY(0);
-      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
       overflow: hidden;
     }
 
     .card:hover, .tarjeta:hover {
-      transform: translateY(-5px);
-      border-color: var(--primary); /* Borde neón sutil */
-      box-shadow: 0 0 20px rgba(0, 224, 255, 0.4), 0 5px 25px var(--shadow-dark); /* Sombra interactiva */
+      transform: translateY(-7px);
+      border-color: var(--primary); 
+      box-shadow: var(--neon-glow), 0 5px 25px var(--shadow-dark); 
     }
 
     .card h3, .tarjeta h3 {
       color: var(--primary);
-      margin: 0 0 0.5rem;
-      font-size: 1.3rem;
+      margin: 0 0 0.7rem;
+      font-size: 1.4rem;
       font-weight: 700;
       border-bottom: 1px solid #333;
-      padding-bottom: 5px;
+      padding-bottom: 8px;
+      font-family: 'Roboto Mono', monospace;
     }
 
     .card p, .tarjeta p {
-      color: #ccc;
-      margin-bottom: 1.3rem;
-      line-height: 1.6;
+      color: var(--secondary-text);
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+      font-weight: 300;
     }
 
     /* BOTONES DE ENLACE ESTILIZADOS */
     .link, .enlace-enlace {
       display: inline-block;
-      padding: 0.7rem 1.2rem;
-      border-radius: 4px; /* Más angular */
+      padding: 0.8rem 1.5rem;
+      border-radius: 4px; 
       background: var(--accent);
-      color: var(--bg); /* Texto oscuro en el botón */
+      color: var(--bg); 
       text-decoration: none;
-      font-weight: 600;
+      font-weight: 700;
       box-shadow: 0 4px 10px rgba(0, 123, 255, 0.4);
       transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-      letter-spacing: 0.5px;
       border: 1px solid var(--accent);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
     }
 
     .link:hover, .enlace-enlace:hover {
       transform: translateY(-2px);
       background: var(--primary);
       border-color: var(--primary);
-      box-shadow: 0 0 15px var(--primary); /* Efecto neón en hover */
+      box-shadow: var(--neon-glow); 
     }
     
     /* FOOTER */
     footer {
       text-align: center;
-      padding: 2rem 1rem;
+      padding: 2.5rem 1rem;
       background: #1a1a1a;
-      color: #aaa;
+      color: #888;
       font-weight: 400;
-      margin-top: 3rem;
+      margin-top: 4rem;
       border-top: 1px solid #333;
     }
 
     @media (max-width: 600px) {
       header h1 {
-        font-size: 1.7rem;
+        font-size: 2rem;
       }
       .card, .tarjeta {
         padding: 1.5rem;
@@ -181,7 +176,7 @@
       <div clase="tarjeta">
         <h3>Regresión 📊</h3>
         <p>Desarrollo y comparación de modelos de regresión aplicados a conjuntos de datos reales.</p>
-        <a class="enlace-enlace" href="https://github.com/bryanchiru/bryanchiru/blob/main/Calculo%20de%20seguro%20de%20salud" target="_blank">Ver Seguro Médico  →</a>
+        <a class="enlace-enlace" href="https://github.com/bryanchiru/bryanchiru/blob/main/Calculo%20de%20seguro%20de%20salud" target="_blank">Ver Seguro Médico →</a>
       </div>
      
       <div class="card">
