@@ -64,3 +64,128 @@
     .tareas {
       width: 100%;
       max-width: 1200px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+    }
+
+    /* TARJETAS ESTILIZADAS (APLICANDO ESTILO A .card Y .tarjeta) */
+    .card, .tarjeta { 
+      position: relative;
+      background: var(--card-bg);
+      border-radius: 6px;
+      padding: 2.5rem;
+      box-shadow: 0 5px 15px var(--shadow-soft);
+      border: 1px solid #333;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      overflow: hidden;
+    }
+
+    .card:hover, .tarjeta:hover {
+      transform: translateY(-5px);
+      border-color: var(--primary); 
+      box-shadow: 0 0 15px rgba(201, 180, 88, 0.4); /* Sombra dorada */
+    }
+
+    .card h3, .tarjeta h3 {
+      color: var(--primary);
+      margin: 0 0 0.7rem;
+      font-size: 1.4rem;
+      font-weight: 700;
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 8px;
+    }
+
+    .card p, .tarjeta p {
+      color: var(--secondary-text);
+      margin-bottom: 1.8rem;
+      line-height: 1.8;
+      font-weight: 300;
+    }
+
+    /* BOTONES DE ENLACE ESTILIZADOS */
+    .link, .enlace-enlace {
+      display: inline-block;
+      padding: 0.7rem 1.4rem;
+      border-radius: 3px; 
+      background: var(--primary);
+      color: #000; /* Texto negro en botón dorado */
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 4px 10px rgba(201, 180, 88, 0.5);
+      transition: all 0.3s ease;
+      border: 1px solid var(--primary);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .link:hover, .enlace-enlace:hover {
+      transform: translateY(-2px);
+      background: #fff;
+      color: var(--primary);
+      box-shadow: 0 8px 20px rgba(201, 180, 88, 0.6); 
+    }
+    
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: #1a1a1a;
+      color: #888;
+      font-weight: 400;
+      margin-top: 5rem;
+      border-top: 1px solid var(--primary);
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+      .card, .tarjeta {
+        padding: 1.8rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>IA - Inteligencia Artificial</h1>
+    <p>Portafolio de Proyectos | Desarrollado por <strong>Bryan Chirú V</strong></p>
+  </header>
+
+  <main>
+    <div class="tareas">
+     
+      <div class="card">
+        <h3>Repositorio & Overview 📘</h3>
+        <p>Configuración inicial del repositorio GitHub y documentación general del proyecto de Inteligencia Artificial.</p>
+        <a class="link" href="https://github.com/bryanchiru/bryanchiru">Ver Repositorio →</a>
+      </div>
+
+      <div class="card">
+        <h3>Hábitos de Sueño & Web 🌙</h3>
+        <p>Realización de un modelo de datos y desarrollo de una interfaz web para el análisis de hábitos de sueño.</p>
+        <a class="link" href="https://github.com/bryanchiru/bryanchiru/blob/main/Tarea3/analisis-de-sue%C3%B1o" target="_blank">Ver Análisis de Sueño →</a>
+      </div>
+      <div class="tarjeta">
+        <h3>Regresión 📊</h3>
+        <p>Desarrollo y comparación de modelos de regresión aplicados a conjuntos de datos reales.</p>
+        <a class="enlace-enlace" href="https://github.com/bryanchiru/bryanchiru/blob/main/Calculo%20de%20seguro%20de%20salud" target="_blank">Ver Seguro Médico →</a>
+      </div>
+     
+      <div class="card">
+        <h3>Laboratorio 1 - WebPage 💻</h3>
+        <p>Diseño y desarrollo de una página web informativa para la visualización de proyectos del curso.</p>
+        <a class="link" href="https://github.com/tuusuario/webpage" target="_blank">Ver proyecto →</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    © 2025 Bryan Chirú V — ULAT Ingeniería Biomédica
+    cedula: 8-957-855
+  </footer>
+</body>
+</html>
