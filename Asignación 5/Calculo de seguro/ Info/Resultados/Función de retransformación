@@ -1,0 +1,40 @@
+# 1. FUNCIÓN DE RETRANSFORMACIÓN: Volver de log(costo) a Costo real ($)
+# Usamos la función exponencial (e^x) para deshacer el logaritmo natural.
+def retransformar_predicciones(predicciones_log):
+    # np.expm1(x) es equivalente a e^x - 1, usado si hubiéramos hecho log(1+x).
+    # Como solo hicimos log(x), usamos np.exp(x).
+    return np.exp(predicciones_log)
+
+# 2. RETRANSFORMACIÓN DE DATOS REALES Y PREDICCIONES
+# Datos reales del conjunto de prueba, retransformados (Y_test original estaba en log)
+Y_test_real = retransformar_predicciones(Y_test)
+
+# Predicciones retransformadas
+pred_lineal_real = retransformar_predicciones(predicciones_lineal_log)
+pred_rf_real = retransformar_predicciones(predicciones_rf_log)
+
+# 3. EVALUACIÓN Y RESULTADOS
+resultados = {
+    'Modelo': [], 'R2 Score': [], 'RMSE (Dólares)': []
+}
+
+# EVALUACIÓN DE REGRESIÓN LINEAL
+rmse_lineal = np.sqrt(mean_squared_error(Y_test_real, pred_lineal_real))
+r2_lineal = r2_score(Y_test_real, pred_lineal_real)
+
+resultados['Modelo'].append('Regresión Lineal')
+resultados['R2 Score'].append(r2_lineal)
+resultados['RMSE (Dólares)'].append(rmse_lineal)
+
+# EVALUACIÓN DE RANDOM FOREST
+rmse_rf = np.sqrt(mean_squared_error(Y_test_real, pred_rf_real))
+r2_rf = r2_score(Y_test_real, pred_rf_real)
+
+resultados['Modelo'].append('Random Forest')
+resultados['R2 Score'].append(r2_rf)
+resultados['RMSE (Dólares)'].append(rmse_rf)
+
+# Mostrar resultados
+df_resultados = pd.DataFrame(resultados)
+print("\n--- RESULTADOS DE MODELADO DE REGRESIÓN ---")
+print(df_resultados)
