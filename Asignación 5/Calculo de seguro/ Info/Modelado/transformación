@@ -1,0 +1,17 @@
+# Aplicar la transformación logarítmica a la variable 'charges'
+# Esto reduce el sesgo y acerca la distribución a la normalidad.
+df_filtrado['log_charges'] = np.log(df_filtrado['charges'])
+
+# 3. Comparar la distribución original vs. la transformada
+fig, axes = plt.subplots(1, 2, figsize=(16, 5))
+
+# Distribución original (sesgada)
+sns.histplot(df_filtrado['charges'], kde=True, bins=30, color='red', ax=axes[0])
+axes[0].set_title('Distribución Original de Charges')
+
+# Distribución transformada (más simétrica)
+sns.histplot(df_filtrado['log_charges'], kde=True, bins=30, color='green', ax=axes[1])
+axes[1].set_title('Distribución Transformada (log_charges)')
+
+plt.tight_layout()
+plt.show()
