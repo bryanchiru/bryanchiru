@@ -1,0 +1,38 @@
+from sklearn.model_selection import train_test_split
+import numpy as np
+import pandas as pd
+
+# 1. Definir Variables (Insumo X y Objetivo Y)
+X = df_filtrado.drop(['charges', 'log_charges'], axis=1)
+Y = df_filtrado['log_charges']
+
+# 2. Preparación para la Estratificación (Crear Bins con Cuantiles)
+# Solución final: Usamos pd.cut para crear 4 grupos (bins) que intentan tener
+# aproximadamente el mismo número de registros, asegurando que todos los bins
+# tengan más de 1 registro.
+# Usamos 'labels=False' para obtener los números enteros que necesitamos.
+Y_binned = pd.cut(Y, bins=4, labels=False, include_lowest=True)
+
+# 3. Verificación de Bins (¡Importante!)
+# Esto mostrará que cada bin tiene muchos registros, resolviendo el error.
+print("Conteo de registros por Bin (DESPUÉS de la corrección):")
+print(Y_binned.value_counts().sort_index())
+
+# 4. División Estratificada (80/20)
+X_train, X_test, Y_train, Y_test = train_test_split(
+    X, Y,
+    test_size=0.2,    # 20% para prueba (Test)
+    random_state=42,  # Semilla para reproducibilidad
+    stratify=Y_binned # Estratificación
+)
+
+# 5. Guardar los Datasets Finales
+train_df = pd.concat([X_train, Y_train], axis=1)
+test_df = pd.concat([X_test, Y_test], axis=1)
+
+train_df.to_csv('train.csv', index=False)
+test_df.to_csv('test.csv', index=False)
+
+print("\n✅ División 80/20 completada y archivos train.csv/test.csv guardados.")
+print(f"Set de Entrenamiento (80%): {train_df.shape[0]} registros.")
+print(f"Set de Prueba (20%): {test_df.shape[0]} registros.")
