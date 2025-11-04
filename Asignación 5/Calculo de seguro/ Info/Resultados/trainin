@@ -1,0 +1,6 @@
+# Entrenar el modelo de Regresión Lineal
+modelo_lineal = LinearRegression()
+modelo_lineal.fit(X_train, Y_train)
+
+# Predecir sobre el conjunto de prueba
+predicciones_lineal_log = modelo_lineal.predict(X_test)
