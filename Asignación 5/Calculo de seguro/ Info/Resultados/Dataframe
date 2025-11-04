@@ -1,0 +1,12 @@
+# Crear un DataFrame para los coeficientes y sus variables
+coeficientes = pd.DataFrame({
+    'Variable': X_train.columns,
+    'Coeficiente (Peso)': modelo_lineal.coef_
+})
+
+# Ordenar por el valor absoluto del coeficiente para ver la influencia
+coeficientes['Abs_Coeficiente'] = np.abs(coeficientes['Coeficiente (Peso)'])
+coeficientes = coeficientes.sort_values(by='Abs_Coeficiente', ascending=False)
+
+print("\n--- INFLUENCIA DE LOS FACTORES EN EL COSTO (log_charges) ---")
+print(coeficientes[['Variable', 'Coeficiente (Peso)']].head(5))
