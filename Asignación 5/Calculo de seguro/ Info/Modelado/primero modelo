@@ -1,0 +1,12 @@
+# Importar librerías necesarias
+import pandas as pd
+import numpy as np
+
+# Cargar el dataset, ya que está subido correctamente
+df = pd.read_csv('insurance.csv')
+
+# Inspección para confirmar la carga y tipos de datos
+print("Primeras filas del dataset original:")
+print(df.head())
+print("\nInformación sobre tipos de datos y nulos:")
+df.info()
