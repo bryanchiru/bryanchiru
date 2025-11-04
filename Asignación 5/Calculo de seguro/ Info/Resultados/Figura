@@ -1,0 +1,16 @@
+fig, axes = plt.subplots(1, 2, figsize=(16, 6))
+
+# Gráfico A: Edad vs. Log(Cargos)
+sns.scatterplot(x='age', y='log_charges', data=df_filtrado, ax=axes[0], alpha=0.6)
+axes[0].set_title('Edad vs. Logaritmo del Costo de Seguro')
+axes[0].set_xlabel('Edad')
+axes[0].set_ylabel('Log(Costo)')
+
+# Gráfico B: BMI vs. Log(Cargos)
+sns.scatterplot(x='bmi', y='log_charges', data=df_filtrado, ax=axes[1], alpha=0.6, color='orange')
+axes[1].set_title('BMI vs. Logaritmo del Costo de Seguro')
+axes[1].set_xlabel('BMI')
+axes[1].set_ylabel('Log(Costo)')
+
+plt.tight_layout()
+plt.show()
