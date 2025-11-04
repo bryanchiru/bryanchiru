@@ -1,0 +1,22 @@
+# Importar librerías de visualización
+import matplotlib.pyplot as plt
+import seaborn as sns
+sns.set_style("whitegrid")
+
+# Configurar el lienzo para dos gráficos
+fig, axes = plt.subplots(1, 2, figsize=(14, 5))
+
+# Gráfico A: Distribución de Hijos (Children)
+sns.countplot(x='children', data=df_final, ax=axes[0], palette='viridis')
+axes[0].set_title('Distribución del Número de Hijos')
+axes[0].set_xlabel('Número de Hijos')
+axes[0].set_ylabel('Frecuencia')
+
+# Gráfico B: Distribución de Fumadores (Smoker_coded)
+sns.countplot(x='smoker_coded', data=df_final, ax=axes[1], palette='tab10')
+axes[1].set_title('Distribución de Fumadores (0=No, 1=Sí)')
+axes[1].set_xlabel('Fumador')
+axes[1].set_ylabel('Frecuencia')
+
+plt.tight_layout()
+plt.show()
