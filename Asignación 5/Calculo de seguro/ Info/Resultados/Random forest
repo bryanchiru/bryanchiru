@@ -1,0 +1,7 @@
+# Entrenar el modelo Random Forest (generalmente más robusto)
+# Usamos un random_state para reproducibilidad
+modelo_rf = RandomForestRegressor(n_estimators=100, random_state=42)
+modelo_rf.fit(X_train, Y_train)
+
+# Predecir sobre el conjunto de prueba
+predicciones_rf_log = modelo_rf.predict(X_test)
