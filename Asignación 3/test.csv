@@ -1,0 +1,73 @@
+Age,Quality of Sleep,Physical Activity Level,Heart Rate,Daily Steps,Systolic_BP,Gender_Male,Occupation_Doctor,Occupation_Engineer,Occupation_Lawyer,Occupation_Manager,Occupation_Nurse,Occupation_Salesperson,Occupation_Scientist,Occupation_Software Engineer,Occupation_Teacher,BMI Category_Overweight,Sleep Disorder_Sleep Apnea,Nivel_Estres_Binario
+33,6,30,72,5000,125.0,True,True,False,False,False,False,False,False,False,False,False,False,ESTRESADO
+43,6,45,72,6000,130.0,True,False,False,False,False,False,True,False,False,False,True,False,ESTRESADO
+52,7,45,72,6000,130.0,False,False,False,False,False,False,False,False,False,False,True,False,ESTRESADO
+43,8,90,70,8000,130.0,True,False,True,False,False,False,False,False,False,False,False,False,ESTRES MODERADO
+28,6,60,75,10000,125.0,True,True,False,False,False,False,False,False,False,False,False,False,ESTRESADO
+55,9,75,72,5000,140.0,False,False,False,False,False,True,False,False,False,False,True,True,ESTRES MODERADO
+44,6,45,72,6000,130.0,True,False,False,False,False,False,True,False,False,False,True,False,ESTRESADO
+45,7,45,65,6000,135.0,False,False,False,False,False,False,False,False,False,True,True,False,ESTRES MODERADO
+54,9,30,65,5000,125.0,False,False,True,False,False,False,False,False,False,False,False,False,ESTRES MODERADO
+39,8,60,68,8000,130.0,True,False,False,True,False,False,False,False,False,False,False,False,ESTRES MODERADO
+37,8,60,68,8000,130.0,True,False,False,True,False,False,False,False,False,False,False,False,ESTRES MODERADO
+51,6,90,75,10000,140.0,False,False,False,False,False,True,False,False,False,False,True,True,ESTRESADO
+59,9,75,68,7000,140.0,False,False,False,False,False,True,False,False,False,False,True,True,ESTRES MODERADO
+50,6,90,75,10000,140.0,False,False,False,False,False,True,False,False,False,False,True,True,ESTRESADO
+39,9,80,67,7500,115.0,False,False,False,False,False,False,False,False,False,False,False,False,ESTRES MODERADO
+42,6,45,78,5000,130.0,False,False,False,False,False,False,False,False,False,True,True,True,ESTRESADO
+45,7,45,65,6000,135.0,False,False,False,False,False,False,False,False,False,True,True,False,ESTRES MODERADO
+31,7,75,70,8000,120.0,True,True,False,False,False,False,False,False,False,False,False,False,ESTRES MODERADO
+52,9,30,65,5000,125.0,False,False,True,False,False,False,False,False,False,False,False,False,ESTRES MODERADO
+31,7,75,70,8000,120.0,True,True,False,False,False,False,False,False,False,False,False,False,ESTRES MODERADO
+59,9,75,68,7000,140.0,False,False,False,False,False,True,False,False,False,False,True,False,ESTRES MODERADO
+53,9,30,65,5000,125.0,False,False,True,False,False,False,False,False,False,False,False,False,ESTRES MODERADO
+36,8,60,68,7000,115.0,False,False,False,False,False,False,False,False,False,False,False,False,ESTRES MODERADO
+45,7,55,75,5500,125.0,False,False,False,False,True,False,False,False,False,False,True,False,ESTRES MODERADO
+36,8,60,68,7000,115.0,False,False,False,False,False,False,False,False,False,False,False,False,ESTRES MODERADO
+31,6,30,72,5000,125.0,True,True,False,False,False,False,False,False,False,False,False,False,ESTRESADO
+39,8,60,68,8000,130.0,True,False,False,True,False,False,False,False,False,False,False,False,ESTRES MODERADO
+44,7,45,65,6000,135.0,False,False,False,False,False,False,False,False,False,True,True,False,ESTRES MODERADO
+39,8,60,68,8000,130.0,True,False,False,True,False,False,False,False,False,False,False,False,ESTRES MODERADO
+42,6,45,78,5000,130.0,False,False,False,False,False,False,False,False,False,True,True,True,ESTRESADO
+29,7,75,70,8000,120.0,True,True,False,False,False,False,False,False,False,False,False,False,ESTRES MODERADO
+42,8,90,70,8000,130.0,True,False,False,True,False,False,False,False,False,False,False,False,ESTRES MODERADO
+49,6,90,75,10000,140.0,False,False,False,False,False,True,False,False,False,False,True,True,ESTRESADO
+54,9,30,65,5000,125.0,False,False,True,False,False,False,False,False,False,False,False,False,ESTRES MODERADO
+38,8,60,68,7000,115.0,False,False,False,False,False,False,False,False,False,False,False,False,ESTRES MODERADO
+51,6,90,75,10000,140.0,False,False,False,False,False,True,False,False,False,False,True,True,ESTRESADO
+59,9,75,68,7000,140.0,False,False,False,False,False,True,False,False,False,False,True,True,ESTRES MODERADO
+57,9,75,68,7000,140.0,False,False,False,False,False,True,False,False,False,False,True,True,ESTRES MODERADO
+32,6,30,72,5000,125.0,True,True,False,False,False,False,False,False,False,False,False,False,ESTRESADO
+53,9,30,65,5000,125.0,False,False,True,False,False,False,False,False,False,False,False,False,ESTRES MODERADO
+28,6,60,75,10000,125.0,True,True,False,False,False,False,False,False,False,False,False,False,ESTRESADO
+36,8,60,68,7000,115.0,False,False,False,False,False,False,False,False,False,True,False,False,ESTRES MODERADO
+58,9,75,68,7000,140.0,False,False,False,False,False,True,False,False,False,False,True,True,ESTRES MODERADO
+42,8,90,70,8000,130.0,True,False,False,True,False,False,False,False,False,False,False,False,ESTRES MODERADO
+35,8,60,65,5000,125.0,True,False,True,False,False,False,False,False,False,False,False,False,ESTRES MODERADO
+36,8,60,68,7000,115.0,False,False,False,False,False,False,False,False,False,True,False,False,ESTRES MODERADO
+41,8,90,70,8000,130.0,True,False,False,True,False,False,False,False,False,False,False,False,ESTRES MODERADO
+32,6,30,72,5000,125.0,True,True,False,False,False,False,False,False,False,False,False,False,ESTRESADO
+36,8,60,68,7000,115.0,False,False,False,False,False,False,False,False,False,True,False,False,ESTRES MODERADO
+44,7,45,65,6000,135.0,False,False,False,False,False,False,False,False,False,True,True,False,ESTRES MODERADO
+53,9,30,65,5000,125.0,False,False,True,False,False,False,False,False,False,False,False,False,ESTRES MODERADO
+40,8,90,68,8000,130.0,True,False,False,True,False,False,False,False,False,False,False,False,ESTRES MODERADO
+38,8,60,68,7000,115.0,False,False,False,False,False,False,False,False,False,False,False,False,ESTRES MODERADO
+53,9,30,65,5000,125.0,False,False,True,False,False,False,False,False,False,False,False,False,ESTRES MODERADO
+54,9,30,65,5000,125.0,False,False,True,False,False,False,False,False,False,False,False,False,ESTRES MODERADO
+33,6,30,72,5000,125.0,True,True,False,False,False,False,False,False,False,False,False,False,ESTRESADO
+50,6,90,75,10000,140.0,False,False,False,False,False,True,False,False,False,False,True,True,ESTRESADO
+38,8,60,68,8000,130.0,True,False,False,True,False,False,False,False,False,False,False,False,ESTRES MODERADO
+59,9,75,68,7000,140.0,False,False,False,False,False,True,False,False,False,False,True,True,ESTRES MODERADO
+30,7,75,70,8000,120.0,True,True,False,False,False,False,False,False,False,False,False,False,ESTRES MODERADO
+43,6,45,72,6000,130.0,True,False,False,False,False,False,True,False,False,False,True,False,ESTRESADO
+50,6,90,75,10000,140.0,False,False,False,False,False,True,False,False,False,False,True,True,ESTRESADO
+43,8,90,70,8000,130.0,True,False,True,False,False,False,False,False,False,False,False,False,ESTRES MODERADO
+37,8,60,68,7000,115.0,False,False,False,False,False,False,False,False,False,False,False,False,ESTRES MODERADO
+52,9,30,65,5000,125.0,False,False,True,False,False,False,False,False,False,False,False,False,ESTRES MODERADO
+50,6,90,75,10000,140.0,False,False,False,False,False,True,False,False,False,False,True,True,ESTRESADO
+53,9,30,65,5000,125.0,False,False,True,False,False,False,False,False,False,False,False,False,ESTRES MODERADO
+37,8,60,68,7000,115.0,False,False,False,False,False,False,False,False,False,False,False,False,ESTRES MODERADO
+39,8,60,68,8000,130.0,True,False,False,True,False,False,False,False,False,False,False,False,ESTRES MODERADO
+29,6,30,70,8000,120.0,True,True,False,False,False,False,False,False,False,False,False,False,ESTRESADO
+33,6,50,76,5500,128.0,False,False,False,False,False,False,False,True,False,False,True,False,ESTRES MODERADO
+44,6,45,72,6000,130.0,True,False,False,False,False,False,True,False,False,False,True,False,ESTRESADO
