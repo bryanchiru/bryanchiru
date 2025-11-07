@@ -1,9 +1,3 @@
-¡Por supuesto! Aquí tiene el código completo y funcional para ejecutar en Jupyter Notebook o Google Colab, realizando todos los pasos del análisis de datos solicitado.
-
-Asegúrese de que el archivo Sleep_health_and_lifestyle_dataset.csv esté en la misma carpeta (o subido al entorno de Colab) donde ejecuta este código.
-
-Python
-
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
