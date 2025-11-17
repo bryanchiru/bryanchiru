@@ -106,7 +106,7 @@
     }
 
     /* BOTONES */
-    .link, .enlace-enlace {
+    .link, .enlace-enlace, .btn-secundario {
       display: inline-block;
       padding: 0.8rem 1.6rem;
       border-radius: 8px;
@@ -117,13 +117,22 @@
       letter-spacing: 0.5px;
       text-transform: uppercase;
       box-shadow: 0 6px 20px rgba(0, 198, 255, 0.5);
+      border: none;
+      cursor: pointer;
     }
 
-    .link:hover, .enlace-enlace:hover {
+    .link:hover, .enlace-enlace:hover, .btn-secundario:hover {
       background: var(--amarillo);
       color: #000;
       transform: scale(1.05);
       box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
+    }
+
+    .acciones-analisis {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      justify-content: center;
     }
 
     /* SECCIÓN FORMULARIO LAB 4 */
@@ -136,6 +145,7 @@
       padding: 2rem;
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
       border: 1px solid rgba(255, 255, 255, 0.2);
+      display: none; /* OCULTO AL INICIO */
     }
 
     #clustering-salud-mental h2 {
@@ -304,18 +314,23 @@
         <a class="enlace-enlace" href="https://github.com/bryanchiru/bryanchiru/tree/main/Asignaci%C3%B3n%205/Calculo%20de%20seguro" target="_blank">Ver Seguro Médico →</a>
       </div>
 
-      <!-- NUEVA TARJETA LAB 4 -->
+      <!-- TARJETA LAB 4 -->
       <div class="tarjeta">
         <h3>Análisis de estado mental 🧠</h3>
         <p>Modelo de clustering de salud mental para estadísticas de riesgo y comportamiento, con integración web para segmentar grupos de atención.</p>
-        <a class="enlace-enlace" href="https://github.com/bryanchiru/clustering.github.io" target="_blank">
-          Ver Análisis de estado mental →
-        </a>
+        <div class="acciones-analisis">
+          <button type="button" class="btn-secundario" id="btn-abrir-analisis">
+            Abrir analizador
+          </button>
+          <a class="enlace-enlace" href="https://github.com/bryanchiru/clustering.github.io" target="_blank">
+            Ver repositorio →
+          </a>
+        </div>
       </div>
 
     </div>
 
-    <!-- SECCIÓN: FORMULARIO LAB 4 -->
+    <!-- SECCIÓN: FORMULARIO LAB 4 (VENTANITA DESPLEGABLE) -->
     <section id="clustering-salud-mental">
       <h2>Predicción de cluster de salud mental</h2>
       <p>Introduce los datos de un paciente para obtener el grupo (cluster) de atención al que pertenece, según el modelo de clustering entrenado.</p>
@@ -385,6 +400,19 @@
 
   <script>
     const API_URL = "https://api-clustering.onrender.com/predecir";
+
+    // Mostrar / ocultar la "ventanita" del analizador
+    document.getElementById("btn-abrir-analisis").addEventListener("click", () => {
+      const seccion = document.getElementById("clustering-salud-mental");
+      const visible = seccion.style.display === "block";
+
+      if (!visible) {
+        seccion.style.display = "block";
+        seccion.scrollIntoView({ behavior: "smooth" });
+      } else {
+        seccion.style.display = "none";
+      }
+    });
 
     document.getElementById("cluster-form").addEventListener("submit", async (e) => {
       e.preventDefault();
