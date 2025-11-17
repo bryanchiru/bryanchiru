@@ -130,9 +130,61 @@
 
     .acciones-analisis {
       display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* Botón principal VER ANÁLISIS */
+    #btn-toggle-submenu {
+      background: var(--accent);
+      color: #000;
+      font-weight: 700;
+    }
+
+    #btn-toggle-submenu span.flecha {
+      margin-left: 0.4rem;
+    }
+
+    /* Submenú dentro de la tarjeta */
+    .submenu-analisis {
+      display: none;
+      margin-top: 0.3rem;
+      width: 100%;
+      max-width: 260px;
+    }
+
+    .submenu-opcion {
+      width: 100%;
+      margin-bottom: 0.4rem;
+      padding: 0.7rem 1rem;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--blanco);
+      text-decoration: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .submenu-opcion span.titulo {
+      font-size: 0.95rem;
+    }
+
+    .submenu-opcion span.flecha {
+      font-size: 1rem;
+    }
+
+    .submenu-opcion.principal span.titulo {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+    }
+
+    .submenu-opcion:hover {
+      background: rgba(0, 198, 255, 0.2);
+      border-color: var(--accent);
     }
 
     /* SECCIÓN FORMULARIO LAB 4 */
@@ -242,6 +294,35 @@
       font-size: 0.95rem;
       color: var(--gris-claro);
       line-height: 1.6;
+      margin-bottom: 0.6rem;
+    }
+
+    #riesgo-suicidio, #riesgo-muerte {
+      font-size: 0.95rem;
+      margin: 0.2rem 0;
+    }
+
+    .barra-riesgo {
+      margin-top: 0.6rem;
+      width: 100%;
+      max-width: 320px;
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.15);
+      overflow: hidden;
+    }
+
+    .barra-riesgo-inner {
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #00c6ff, #ff5252);
+      width: 0%;
+    }
+
+    .nota-disclaimer {
+      margin-top: 0.6rem;
+      font-size: 0.8rem;
+      color: #cccccc;
     }
 
     /* FOOTER */
@@ -319,12 +400,20 @@
         <h3>Análisis de estado mental 🧠</h3>
         <p>Modelo de clustering de salud mental para estadísticas de riesgo y comportamiento, con integración web para segmentar grupos de atención.</p>
         <div class="acciones-analisis">
-          <button type="button" class="btn-secundario" id="btn-abrir-analisis">
-            Abrir analizador
+          <button type="button" class="btn-secundario" id="btn-toggle-submenu">
+            VER ANÁLISIS <span class="flecha">▼</span>
           </button>
-          <a class="enlace-enlace" href="https://github.com/bryanchiru/clustering.github.io" target="_blank">
-            Ver repositorio →
-          </a>
+
+          <div class="submenu-analisis" id="submenu-analisis">
+            <button type="button" class="submenu-opcion principal" id="btn-abrir-analisis">
+              <span class="titulo">Ver analizador</span>
+              <span class="flecha">→</span>
+            </button>
+            <a class="submenu-opcion" href="https://github.com/bryanchiru/clustering.github.io" target="_blank">
+              <span class="titulo">Ver repositorio</span>
+              <span class="flecha">→</span>
+            </a>
+          </div>
         </div>
       </div>
 
@@ -388,6 +477,14 @@
         <p id="cluster-numero"></p>
         <p id="cluster-nombre"></p>
         <p id="cluster-descripcion"></p>
+        <p id="riesgo-suicidio"></p>
+        <p id="riesgo-muerte"></p>
+        <div class="barra-riesgo">
+          <div class="barra-riesgo-inner" id="barra-riesgo-suicidio"></div>
+        </div>
+        <p class="nota-disclaimer">
+          *Esta herramienta es de uso académico y no sustituye una evaluación profesional de salud mental.*
+        </p>
       </section>
     </section>
 
@@ -401,16 +498,25 @@
   <script>
     const API_URL = "https://api-clustering.onrender.com/predecir";
 
-    // Mostrar / ocultar la "ventanita" del analizador
-    document.getElementById("btn-abrir-analisis").addEventListener("click", () => {
-      const seccion = document.getElementById("clustering-salud-mental");
-      const visible = seccion.style.display === "block";
+    // Mostrar / ocultar submenú
+    const btnToggleSubmenu = document.getElementById("btn-toggle-submenu");
+    const submenu = document.getElementById("submenu-analisis");
+    const btnAbrirAnalisis = document.getElementById("btn-abrir-analisis");
+    const seccionAnalisis = document.getElementById("clustering-salud-mental");
 
+    btnToggleSubmenu.addEventListener("click", () => {
+      const visible = submenu.style.display === "block";
+      submenu.style.display = visible ? "none" : "block";
+    });
+
+    // Ver analizador: muestra/oculta la sección
+    btnAbrirAnalisis.addEventListener("click", () => {
+      const visible = seccionAnalisis.style.display === "block";
       if (!visible) {
-        seccion.style.display = "block";
-        seccion.scrollIntoView({ behavior: "smooth" });
+        seccionAnalisis.style.display = "block";
+        seccionAnalisis.scrollIntoView({ behavior: "smooth" });
       } else {
-        seccion.style.display = "none";
+        seccionAnalisis.style.display = "none";
       }
     });
 
@@ -434,10 +540,16 @@
       const numero = document.getElementById("cluster-numero");
       const nombre = document.getElementById("cluster-nombre");
       const descripcion = document.getElementById("cluster-descripcion");
+      const riesgoSuicidio = document.getElementById("riesgo-suicidio");
+      const riesgoMuerte = document.getElementById("riesgo-muerte");
+      const barraSuicidio = document.getElementById("barra-riesgo-suicidio");
 
       numero.textContent = "Calculando cluster...";
       nombre.textContent = "";
       descripcion.textContent = "";
+      riesgoSuicidio.textContent = "";
+      riesgoMuerte.textContent = "";
+      barraSuicidio.style.width = "0%";
 
       try {
         const resp = await fetch(API_URL, {
@@ -456,14 +568,25 @@
         nombre.textContent = "Nombre del cluster: " + (data.nombre_cluster || "N/A");
         descripcion.textContent = "Descripción: " + (data.descripcion_cluster || "Sin descripción disponible.");
 
+        // Riesgos (si vienen de la API)
+        const rs = data.riesgo_suicidio ?? 0;
+        const rm = data.riesgo_mortalidad ?? 0;
+
+        riesgoSuicidio.textContent = "Riesgo estimado de intento suicida: " + rs + "%";
+        riesgoMuerte.textContent = "Riesgo estimado de complicaciones graves/mortalidad relacionada: " + rm + "%";
+
+        barraSuicidio.style.width = rs + "%";
+
       } catch (err) {
         console.error(err);
         numero.textContent = "Error al llamar a la API.";
         nombre.textContent = "";
         descripcion.textContent = err.message;
+        riesgoSuicidio.textContent = "";
+        riesgoMuerte.textContent = "";
+        barraSuicidio.style.width = "0%";
       }
     });
   </script>
 </body>
 </html>
-
