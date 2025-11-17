@@ -105,7 +105,7 @@
       margin-bottom: 1.8rem;
     }
 
-    /* BOTONES */
+    /* BOTONES GENERALES */
     .link, .enlace-enlace, .btn-secundario {
       display: inline-block;
       padding: 0.8rem 1.6rem;
@@ -128,6 +128,7 @@
       box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
     }
 
+    /* TARJETA LAB 4: SUBMENÚ */
     .acciones-analisis {
       display: flex;
       flex-direction: column;
@@ -135,7 +136,6 @@
       gap: 0.5rem;
     }
 
-    /* Botón principal VER ANÁLISIS */
     #btn-toggle-submenu {
       background: var(--accent);
       color: #000;
@@ -146,10 +146,9 @@
       margin-left: 0.4rem;
     }
 
-    /* Submenú dentro de la tarjeta */
     .submenu-analisis {
       display: none;
-      margin-top: 0.3rem;
+      margin-top: 0.6rem;
       width: 100%;
       max-width: 260px;
     }
@@ -158,33 +157,40 @@
       width: 100%;
       margin-bottom: 0.4rem;
       padding: 0.7rem 1rem;
-      border-radius: 8px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      background: rgba(255, 255, 255, 0.08);
-      color: var(--blanco);
+      border-radius: 999px;
+      background: var(--accent);
+      border: 2px solid rgba(255, 255, 255, 0.35);
+      color: #000;
       text-decoration: none;
       display: flex;
       justify-content: space-between;
       align-items: center;
       cursor: pointer;
+      font-weight: 600;
+      text-transform: uppercase;
+      box-shadow: 0 6px 20px rgba(0, 198, 255, 0.4);
     }
 
     .submenu-opcion span.titulo {
-      font-size: 0.95rem;
+      font-size: 0.85rem;
     }
 
     .submenu-opcion span.flecha {
       font-size: 1rem;
     }
 
-    .submenu-opcion.principal span.titulo {
+    .submenu-opcion.principal {
+      background: #00a3e6; /* un poco más oscuro */
       font-family: 'Playfair Display', serif;
       font-weight: 700;
     }
 
     .submenu-opcion:hover {
-      background: rgba(0, 198, 255, 0.2);
-      border-color: var(--accent);
+      background: var(--amarillo);
+      color: #000;
+      border-color: rgba(255, 255, 255, 0.7);
+      transform: translateY(-1px);
+      box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
     }
 
     /* SECCIÓN FORMULARIO LAB 4 */
@@ -197,7 +203,7 @@
       padding: 2rem;
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
       border: 1px solid rgba(255, 255, 255, 0.2);
-      display: none; /* OCULTO AL INICIO */
+      display: none; /* oculto al inicio */
     }
 
     #clustering-salud-mental h2 {
@@ -419,7 +425,7 @@
 
     </div>
 
-    <!-- SECCIÓN: FORMULARIO LAB 4 (VENTANITA DESPLEGABLE) -->
+    <!-- SECCIÓN: FORMULARIO LAB 4 -->
     <section id="clustering-salud-mental">
       <h2>Predicción de cluster de salud mental</h2>
       <p>Introduce los datos de un paciente para obtener el grupo (cluster) de atención al que pertenece, según el modelo de clustering entrenado.</p>
@@ -498,7 +504,7 @@
   <script>
     const API_URL = "https://api-clustering.onrender.com/predecir";
 
-    // Mostrar / ocultar submenú
+    // Submenú de la tarjeta
     const btnToggleSubmenu = document.getElementById("btn-toggle-submenu");
     const submenu = document.getElementById("submenu-analisis");
     const btnAbrirAnalisis = document.getElementById("btn-abrir-analisis");
@@ -509,7 +515,6 @@
       submenu.style.display = visible ? "none" : "block";
     });
 
-    // Ver analizador: muestra/oculta la sección
     btnAbrirAnalisis.addEventListener("click", () => {
       const visible = seccionAnalisis.style.display === "block";
       if (!visible) {
@@ -520,6 +525,7 @@
       }
     });
 
+    // Lógica del formulario
     document.getElementById("cluster-form").addEventListener("submit", async (e) => {
       e.preventDefault();
 
@@ -568,7 +574,6 @@
         nombre.textContent = "Nombre del cluster: " + (data.nombre_cluster || "N/A");
         descripcion.textContent = "Descripción: " + (data.descripcion_cluster || "Sin descripción disponible.");
 
-        // Riesgos (si vienen de la API)
         const rs = data.riesgo_suicidio ?? 0;
         const rm = data.riesgo_mortalidad ?? 0;
 
