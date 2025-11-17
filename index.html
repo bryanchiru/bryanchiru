@@ -56,14 +56,17 @@
 
     /* MAIN */
     main {
-      padding: 4rem 1rem 5rem;
+      padding: 4rem 1rem 3rem;
       display: flex;
       justify-content: center;
+      flex-direction: column;
+      gap: 3rem;
     }
 
     .tareas {
       width: 100%;
       max-width: 1200px;
+      margin: 0 auto;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2.2rem;
@@ -121,6 +124,114 @@
       color: #000;
       transform: scale(1.05);
       box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
+    }
+
+    /* SECCIÓN FORMULARIO LAB 4 */
+    #clustering-salud-mental {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto 2rem auto;
+      background: rgba(0, 0, 0, 0.25);
+      border-radius: 14px;
+      padding: 2rem;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    #clustering-salud-mental h2 {
+      margin-top: 0;
+      color: var(--amarillo);
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+      padding-bottom: 6px;
+      margin-bottom: 1rem;
+    }
+
+    #clustering-salud-mental p {
+      color: var(--gris-claro);
+      margin-bottom: 1rem;
+    }
+
+    #cluster-form {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem 1.5rem;
+      margin-top: 1rem;
+    }
+
+    #cluster-form div {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    #cluster-form label {
+      font-size: 0.9rem;
+      margin-bottom: 0.2rem;
+      color: var(--blanco);
+    }
+
+    #cluster-form input {
+      width: 100%;
+      padding: 0.4rem 0.6rem;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      background: rgba(255, 255, 255, 0.18);
+      color: var(--blanco);
+      outline: none;
+    }
+
+    #cluster-form input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px rgba(0, 198, 255, 0.4);
+    }
+
+    #cluster-form button {
+      grid-column: 1 / -1;
+      margin-top: 0.8rem;
+      align-self: center;
+      padding: 0.8rem 1.8rem;
+      border-radius: 8px;
+      border: none;
+      background: var(--accent);
+      color: #000;
+      font-weight: 600;
+      text-transform: uppercase;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(0, 198, 255, 0.5);
+    }
+
+    #cluster-form button:hover {
+      background: var(--amarillo);
+      box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
+      transform: translateY(-1px);
+    }
+
+    #resultado-cluster {
+      margin-top: 1.5rem;
+      padding: 1rem 1.2rem;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    #cluster-numero {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+      color: var(--amarillo);
+    }
+
+    #cluster-nombre {
+      font-size: 1.05rem;
+      font-weight: 500;
+      margin-bottom: 0.3rem;
+    }
+
+    #cluster-descripcion {
+      font-size: 0.95rem;
+      color: var(--gris-claro);
+      line-height: 1.6;
     }
 
     /* FOOTER */
@@ -196,19 +307,135 @@
       <!-- NUEVA TARJETA LAB 4 -->
       <div class="tarjeta">
         <h3>Análisis de estado mental 🧠</h3>
-        <p>Modelo de clustering de salud mental para la estadísticas de riesgo y comportamiento,integración web para segmentar grupos de atención.</p>
+        <p>Modelo de clustering de salud mental para estadísticas de riesgo y comportamiento, con integración web para segmentar grupos de atención.</p>
         <a class="enlace-enlace" href="https://github.com/bryanchiru/clustering.github.io" target="_blank">
           Ver Análisis de estado mental →
         </a>
       </div>
 
     </div>
+
+    <!-- SECCIÓN: FORMULARIO LAB 4 -->
+    <section id="clustering-salud-mental">
+      <h2>Predicción de cluster de salud mental</h2>
+      <p>Introduce los datos de un paciente para obtener el grupo (cluster) de atención al que pertenece, según el modelo de clustering entrenado.</p>
+
+      <form id="cluster-form">
+        <div>
+          <label for="ansiedad">Ansiedad (0-10):</label>
+          <input id="ansiedad" type="number" step="0.1" min="0" max="10" required>
+        </div>
+        <div>
+          <label for="depresion">Depresión (0-10):</label>
+          <input id="depresion" type="number" step="0.1" min="0" max="10" required>
+        </div>
+        <div>
+          <label for="estres">Estrés (0-10):</label>
+          <input id="estres" type="number" step="0.1" min="0" max="10" required>
+        </div>
+        <div>
+          <label for="horas_sueno">Horas de sueño (por noche):</label>
+          <input id="horas_sueno" type="number" step="0.1" min="0" max="12" required>
+        </div>
+        <div>
+          <label for="actividad_fisica">Actividad física (min/semana):</label>
+          <input id="actividad_fisica" type="number" step="1" min="0" max="600" required>
+        </div>
+        <div>
+          <label for="autoestima">Autoestima (0-10):</label>
+          <input id="autoestima" type="number" step="0.1" min="0" max="10" required>
+        </div>
+        <div>
+          <label for="soporte_social">Soporte social (0-10):</label>
+          <input id="soporte_social" type="number" step="0.1" min="0" max="10" required>
+        </div>
+        <div>
+          <label for="consumo_alcohol">Consumo de alcohol (0-7 días/sem):</label>
+          <input id="consumo_alcohol" type="number" step="1" min="0" max="7" required>
+        </div>
+        <div>
+          <label for="ideacion_suicida">Ideación suicida (0-10):</label>
+          <input id="ideacion_suicida" type="number" step="0.1" min="0" max="10" required>
+        </div>
+        <div>
+          <label for="rendimiento_academico">Rendimiento académico (0-100):</label>
+          <input id="rendimiento_academico" type="number" step="1" min="0" max="100" required>
+        </div>
+        <div>
+          <label for="edad">Edad:</label>
+          <input id="edad" type="number" step="1" min="15" max="100" required>
+        </div>
+
+        <button type="submit">Calcular cluster</button>
+      </form>
+
+      <section id="resultado-cluster">
+        <p id="cluster-numero"></p>
+        <p id="cluster-nombre"></p>
+        <p id="cluster-descripcion"></p>
+      </section>
+    </section>
+
   </main>
 
   <footer>
     © 2025 <strong>Bryan Chirú V</strong> — ULAT Ingeniería Biomédica<br>
     Cédula: 8-957-855
   </footer>
+
+  <script>
+    const API_URL = "https://api-clustering.onrender.com/predecir";
+
+    document.getElementById("cluster-form").addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const valores = [
+        parseFloat(document.getElementById("ansiedad").value),
+        parseFloat(document.getElementById("depresion").value),
+        parseFloat(document.getElementById("estres").value),
+        parseFloat(document.getElementById("horas_sueno").value),
+        parseFloat(document.getElementById("actividad_fisica").value),
+        parseFloat(document.getElementById("autoestima").value),
+        parseFloat(document.getElementById("soporte_social").value),
+        parseFloat(document.getElementById("consumo_alcohol").value),
+        parseFloat(document.getElementById("ideacion_suicida").value),
+        parseFloat(document.getElementById("rendimiento_academico").value),
+        parseInt(document.getElementById("edad").value)
+      ];
+
+      const numero = document.getElementById("cluster-numero");
+      const nombre = document.getElementById("cluster-nombre");
+      const descripcion = document.getElementById("cluster-descripcion");
+
+      numero.textContent = "Calculando cluster...";
+      nombre.textContent = "";
+      descripcion.textContent = "";
+
+      try {
+        const resp = await fetch(API_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ valores })
+        });
+
+        if (!resp.ok) {
+          throw new Error("Error HTTP " + resp.status);
+        }
+
+        const data = await resp.json();
+
+        numero.textContent = "Cluster asignado: " + data.cluster;
+        nombre.textContent = "Nombre del cluster: " + (data.nombre_cluster || "N/A");
+        descripcion.textContent = "Descripción: " + (data.descripcion_cluster || "Sin descripción disponible.");
+
+      } catch (err) {
+        console.error(err);
+        numero.textContent = "Error al llamar a la API.";
+        nombre.textContent = "";
+        descripcion.textContent = err.message;
+      }
+    });
+  </script>
 </body>
 </html>
 
